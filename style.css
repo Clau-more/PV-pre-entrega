@@ -1,0 +1,450 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: "Poppins", serif;
+    background-color: #ffe6ba;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color:#facd80;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.menu .navbar ul li {
+    position: relative;  
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #cf2D3A;
+    display: block;
+}
+
+.menu .navbar ul li a:hover {
+    color: #232323;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-txt {
+    text-align: center;
+    margin-top: 45px;
+}
+
+.header-txt h1, span, h3 {
+    font-size: 110px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    color: #4a3e31;
+    margin-bottom: 15px;
+}
+
+.header-txt span {
+    font-size: 25px;
+}
+
+.header-txt p {
+    color: #4a3e31;
+    padding: 0 250px;
+    margin: 25px 0;
+}
+
+.header-dir {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dir h3 {
+    font-size: 18px;
+}
+
+.dir p {
+    font-size: 22px;
+    color: #cf2D3A;
+    text-transform: uppercase;
+}
+
+.welcome {
+    display: flex;
+}
+
+.welcome-1 {
+    background-image: url(./img/Nosotros.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+.welcome-2 {
+    width: 50%;
+    padding: 150px 250px 150px 100px;
+    background-color: #fceacc;
+}
+
+h2 {
+    font-size: 90px;
+    line-height: 100px;
+    color: #4a3e31;
+    text-transform: uppercase;
+    font-family: "Bebas Neue", sans-serif;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #4a3e31;
+    margin: 25px 0;
+}
+
+.productos {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.productos-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+hr {
+    border: 1px solid #cf2D3A;
+    width: 80px;
+}
+
+.productos-txt p {
+    padding: 50px 150px;
+}
+
+.productos-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 0;
+}
+
+.productos-1 {
+    background-color: #facd80;
+    padding: 35px 25px;
+    margin: 0 10px;
+    border-radius: 15px;
+}
+
+.productos-1 img {
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.productos-1 a {
+    color: #cf2D3A;
+    font-size: 16px;
+}
+
+.envios {
+    display: flex;
+}
+
+.envios-1 {
+    width: 50%;
+    padding: 150px 250px 150px 100px;
+    background-color:  #fceacc;
+}
+
+.table {
+    margin: 50px 0;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #4a3e31;
+    margin-bottom: 20px;
+}
+
+th {
+    color: #4a3e31;
+    padding-bottom: 15px;
+}
+
+td {
+    color: #cf2D3A;
+}
+
+.envios-2 {
+    background-image: url(./img/localFondo.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+}
+
+.reseñas {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.reseñas-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.reseñas-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+.card {
+    text-align: center;
+} 
+.card img {
+    width: 100px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+.card h3 {
+    font-size: 22px;
+}
+
+.card p {
+    padding: 0 50px;
+}
+
+.card a {
+    color: #cf2D3A;
+} 
+
+.footer-form {
+    text-align: center;
+    padding: 100px 0; 
+    background-color:  #fceacc;
+}
+
+.footer-form h2 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campo-1 {
+    margin-bottom: 15px;
+}
+
+.campo {
+    margin: 5px;
+    padding: 20px 15px;
+    width: 250px;
+    background-color: #facd80;
+    border: 1px solid #ffffff;
+    outline: none;
+    border-radius: 10px;
+    color: #4a3e31;
+    font-size: 14px;
+}
+
+textarea {
+    width: 520px !important;
+}
+.btn-1 {
+    background-color: #facd80;
+    color: #4a3e31;
+    padding: 2px 5px;
+    border: 1px solid #4a3e31; 
+}
+
+.footer-txt {
+    text-align: center;
+    padding: 10px;
+    background-color: #facd80;
+}
+
+.section-dir {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.productos-group2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 45px 0;
+}
+
+.productos-2 {
+    background-color: #facd80;
+    padding: 35px 25px;
+    margin: 0 10px;
+    border-radius: 15px;
+}
+
+.productos-2 img {
+    width: 300px;
+    margin-bottom: 15px;
+}
+
+.productos-2 a {
+    color: #cf2D3A;
+    font-size: 16px;
+}
+
+@media(max-width:991px) {
+    .menu {
+        padding: 20px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fceacc;
+        display: none;
+    }
+    .menu .navbar ul li {
+        width: 100%;
+    } 
+
+    #menu:checked ~ .navbar {
+        display: initial; 
+    }
+    .header {
+        min-height: 0;
+    }
+
+    .header-content {
+        padding: 80px 30px 50px 30px;
+    }
+
+    .header-txt {
+        margin-bottom: 15px;
+    }
+    .header-txt h1 {
+        font-size: 90px;
+    }
+    .header-txt p {
+        padding: 0;
+        margin: 15px 0;
+    }
+    .header-dir {
+        flex-direction: column;
+    }
+    .dir p {
+        font-size: 18px;
+    }
+    .welcome {
+        flex-direction: column;
+    }
+    .welcome-1 {
+        display: none;
+    }
+    .welcome-2 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    h2 {
+        font-size: 70px;
+        line-height: 80px;
+    }
+    p {
+        margin: 15px 0;
+    }
+    .productos {
+        padding: 30px;
+    }
+    .productos-txt p {
+        padding: 0;
+    }
+    .productos-group {
+        flex-direction: column;
+        margin: 0;
+    }
+    .productos-1 {
+        margin: 0 0 20px 0;
+    }
+    .envios {
+        flex-direction: column;
+    }
+    .envios-1 {
+        width: 100%;
+        padding: 30px;
+        text-align: center;
+    }
+    table {
+        margin: 25px 0 0 0;
+    }
+    .envios-2 {
+        display: none;
+    }
+    .reseñas {
+        padding: 30px;
+    }
+    .reseñas-group {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    .card {
+        margin-bottom: 25px;
+    }
+    .footer-form {
+        padding: 30px;
+    }
+    textarea {
+        width: 250px !important;
+    }
+}
