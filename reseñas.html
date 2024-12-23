@@ -8,6 +8,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="menu container">
+        <img src="./img/logo.png" width="70" class="logo" alt="logo pv"> 
+        <input type="checkbox" id="menu">
+        <label for="menu">
+            <img src="./img/menu.png" class="menu-icono" alt="menu icono">
+        </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="reseñas.html">Reseñas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#">Carrito (<span id="contadorCarrito">0</span>)</a></li>
+                </ul>
+            </nav>
+    </div>
     <section class="reseñas container">
         <div class="reseñas-txt">
             <h2>Reseñas</h2>
@@ -47,3 +63,5 @@
             </div>
         </div>
     </section>
+    <script src="script.js"></script>
+</body>

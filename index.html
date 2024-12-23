@@ -21,9 +21,11 @@
                     <li><a href="productos.html">Productos</a></li>
                     <li><a href="reseñas.html">Reseñas</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="#">Carrito (<span id="contadorCarrito">0</span>)</a></li>
                 </ul>
             </nav>
         </div>
+        
         <div class="header-content container">
             <div class="header-txt">
                 <h1>Pronto Volveras</h1>
@@ -64,7 +66,7 @@
     </section>
     <main class="productos container">
         <div class="productos-txt">
-            <h2>Nuestros Sweaters</h2>
+            <h2>Los más buscados</h2>
             <hr>
             <p>
                 Contamos con gran variedad de modelos y colores.
@@ -75,17 +77,14 @@
             <div class="productos-1">
                 <img src="./img/swJ51Salmon.jpg" alt="sweater">
                 <p>Sweater J51 Salmón</p>
-                <a href="#">Saber más...</a>
             </div>
             <div class="productos-1">
                 <img src="./img/swJ51Verde.jpg" alt="sweater">
                 <p>Sweater J51 Verde</p>
-                <a href="#">Saber más...</a>
             </div>
             <div class="productos-1">
                 <img src="./img/swJ51Camel.jpg" alt="sweater">
                 <p>Sweater J51 Camel</p>
-                <a href="#">Saber más...</a>
             </div>
         </div>
     </main>
@@ -161,6 +160,7 @@
             <form action="https://formspree.io/f/mgveybpv" method="POST">
                 <div class="campo-1">
                     <input class="campo" type="text" id="nombre" name="nombre" placeholder="Nombre">
+                    <span class="error" id="error-nombre"></span>
                     <input class="campo" type="number" id="telefono" name="telefono" placeholder="Telefono">
                 </div>
                 <div class="campo-1">
@@ -175,5 +175,6 @@
             <p>Derechos Reservados.</p>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

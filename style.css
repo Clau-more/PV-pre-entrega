@@ -177,11 +177,6 @@ hr {
     margin-bottom: 15px;
 }
 
-.productos-1 a {
-    color: #cf2D3A;
-    font-size: 16px;
-}
-
 .envios {
     display: flex;
 }
@@ -337,6 +332,156 @@ textarea {
 .productos-2 a {
     color: #cf2D3A;
     font-size: 16px;
+} 
+
+#error-nombre {
+    font-size: 18px;
+    color: #cf2D3A;
+}
+
+.section-carrito-container {
+    max-width: 800px;
+    margin: auto; 
+    margin-top: 80px;
+    background: #facd80;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #fceacc;
+}
+.total {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+.button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color:#4a3e31;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #cf2D3A;
+}
+
+.listaProductos-txt {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.listaProductos-txt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#productos {
+    margin-top: 40px;
+}
+.producto {
+    border: 1px solid #4a3e31;
+    padding: 1px;
+    margin: 10px 0;
+}
+button {
+    background-color: #4a3e31;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #cf2D3A;
+}
+
+.ul .li{
+    font-size: 18px;
+    padding: 20px;
+    color: #cf2D3A;
+}
+#contadorCarrito {
+    font-size: 18px;
+    padding: 20px;
+    color: #cf2D3A;
+}
+
+#carritoContainer {
+    background-color: #facd80;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#carrito {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+#carrito p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#carrito input[type="number"] {
+    width: 50px;
+    margin-left: 10px;
+}
+
+button {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e63939;
+}
+
+#totalCarrito {
+    font-weight: bold;
+    font-size: 1.2em;
+} 
+
+#botonPagar {
+    background-color: #ff4c4c; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+#botonPagar:hover {
+    background-color: #e63939; 
 }
 
 @media(max-width:991px) {
@@ -446,5 +591,17 @@ textarea {
     }
     textarea {
         width: 250px !important;
+    }
+    #carritoContainer {
+        padding: 10px;
+    }
+    
+    #carrito p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #carrito input[type="number"] {
+        margin-top: 5px;
     }
 }

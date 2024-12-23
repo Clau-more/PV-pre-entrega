@@ -8,18 +8,140 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-</section>
-<main class="productos container">
+    <div class="menu container">
+    <img src="./img/logo.png" width="70" class="logo" alt="logo pv"> 
+    <input type="checkbox" id="menu">
+    <label for="menu">
+        <img src="./img/menu.png" class="menu-icono" alt="menu icono">
+    </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="reseñas.html">Reseñas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="#">Carrito (<span id="contadorCarrito">0</span>)</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main>
+        <div class="listaProductos-txt">
+            <h2>Lista de Productos</h2>
+            <div id="productos"></div>
+        </div>
+        <div id="carritoContainer" style="display:none;">
+            <h2>Carrito de Compras</h2>
+            <div id="carrito"></div>
+            <p>Total: $<span id="totalCarrito">0</span></p>
+            <button id="botonPagar">Pagar</button>
+        </div> 
+
+        <script>
+            const apiUrl = 'https://fakestoreapi.com/products?limit=5';
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+            async function obtenerProductos() {
+                try {
+                    const respuesta = await fetch(apiUrl);
+                    if (!respuesta.ok) {
+                        throw new Error('Error en la red: ' + respuesta.statusText);
+                    }
+                    const productos = await respuesta.json();
+                    mostrarProductos(productos);
+                } catch (error) {
+                    console.error('Error al obtener los productos:', error);
+                }
+            }
+
+            function mostrarProductos(productos) {
+                const contenedor = document.getElementById('productos');
+                contenedor.innerHTML = '';
+                productos.forEach(producto => {
+                    const div = document.createElement('div');
+                    div.classList.add('producto');
+                    div.innerHTML = `
+                        <h1>${producto.title}</h1>
+                        <img src="${producto.image}" alt="${producto.title}" width="100">
+                        <p>Precio: $${producto.price}</p>
+                        <button onclick="agregarAlCarrito(${producto.id}, '${producto.title}', ${producto.price})">Agregar al Carrito</button>
+                    `;
+                    contenedor.appendChild(div);
+                });
+                actualizarContador();
+            }
+
+            function agregarAlCarrito(productId, title, price) {
+                const productoExistente = carrito.find(item => item.id === productId);
+                if (productoExistente) {
+                    productoExistente.cantidad += 1;
+                } else {
+                    carrito.push({ id: productId, title, price, cantidad: 1 });
+                }
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                mostrarCarrito();
+                actualizarContador();
+            }
+
+            function mostrarCarrito() {
+                const contenedorCarrito = document.getElementById('carrito');
+                contenedorCarrito.innerHTML = '';
+                let total = 0;
+
+                carrito.forEach(item => {
+                    const div = document.createElement('div');
+                    div.innerHTML = `
+                        <p>${item.title} - Cantidad: <input type="number" value="${item.cantidad}" min="1" onchange="actualizarCantidad(${item.id}, this.value)"> 
+                        <button onclick="eliminarDelCarrito(${item.id})">Eliminar</button></p>
+                    `;
+                    contenedorCarrito.appendChild(div);
+                    total += item.price * item.cantidad;
+                });
+                document.getElementById('totalCarrito').innerText = total.toFixed(2);
+                document.getElementById('carritoContainer').style.display = 'block';
+            }
+
+            function actualizarCantidad(productId, cantidad) {
+                const producto = carrito.find(item => item.id === productId);
+                if (producto) {
+                    producto.cantidad = parseInt(cantidad);
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                    mostrarCarrito();
+                }
+            }
+
+            function eliminarDelCarrito(productId) {
+                carrito = carrito.filter(item => item.id !== productId);
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                mostrarCarrito();
+                actualizarContador();
+            }
+
+            function actualizarContador() {
+                const contador = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+                document.getElementById('contadorCarrito').innerText = contador;
+            }
+
+            obtenerProductos();
+            mostrarCarrito(); // Mostrar carrito si hay productos guardados en localStorage
+        </script>
+    </main>
+</body>
+</html>
+
+
+<!-- Esta seccion la utilice en la 1° preentrega esta comentada ya que en la entrega final utilice una API externa -->
+
+<!-- <main class="productos container">
     <div class="productos-txt">
         <h2>Nuestros Sweaters</h2>
         <hr>
         <p>
             Contamos con gran variedad de modelos y colores.
             Podrás encontrar swaeters de bremer y buzos frizados animados.
-        </p>
-        <h1>SWEATERS BREMER</h1>
-    </div>
-    <div class="productos-group">
+        </p> -->
+        <!-- <h1>SWEATERS BREMER</h1> -->
+    <!-- </div> -->
+    <!-- <div class="productos-group">
         <div class="productos-1">
             <img src="./img/swJ51Salmon.jpg" alt="sweater">
             <p>Sweater J51 Salmón</p>
@@ -72,6 +194,8 @@
             <img src="./img/buzoPantera.jpg" alt="buzo">
             <p>Buzo Pantera Rosa</p>
             <a href="#">Saber más...</a>
-        </div>
-    </div>
-</main> 
+        </div> -->
+    <!-- </div>
+</main>
+<script src="script.js"></script> 
+</body> -->
